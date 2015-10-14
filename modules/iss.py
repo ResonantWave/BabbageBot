@@ -11,10 +11,7 @@ def execute(data):
       html = response.read()
       decoded = json.loads(html)
    except Exception:
-      outgoingMessageProtocolEntity = TextMessageProtocolEntity(
-      'Unknown error',  # Because we're lazy, aren't we?
-      to = messageProtocolEntity.getFrom())
-      self.toLower(outgoingMessageProtocolEntity)
+      return 'Unknown error' # Because we are lazy, aren't we?
    dLat = math.radians(decoded['latitude'] - latitude)
    dLon = math.radians(decoded['longitude'] - longitude)
 

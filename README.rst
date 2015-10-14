@@ -28,6 +28,13 @@ Usage
 Once installed, run it by calling `python main.py`. It will automatically connect and start listening to all incoming messages.
 
 
+Adding commands
+===============
+
+Adding a command is pretty straightforward. First create a python file in the `modules`_ directory. Create the function ``execute(data)``. The data argument is required even if you don't use it. Inside the ``execute`` function, put all your code. Don't forget to add the imports!
+
+After this, open `modules/list.py`_ and add an import with the name of the module you just created (eg: ``import shakespeareQuotes``). Then add an entry for the ``commandModules`` dictionary, using the same name of the import (eg: ``'quote' : shakespeareQuotes``). As you can see the name of the entry is the string that will be used as the filter, and the value is the command to be executed.
+
 Contributors
 ============
 
@@ -45,6 +52,8 @@ Contributing
 
 .. _main.py: main.py
 .. _modules/weather.py: modules/weather.py
+.. _modules: modules
+.. _modules/list.py: modules/list.py
 .. _GNU Lesser GPL V3: LICENSE
 .. _GitHub: https://github.com/ResonantWave/BabbageBot
 .. _GitHub Issues: https://github.com/ResonantWave/BabbageBot/issues
