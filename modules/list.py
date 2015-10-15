@@ -7,6 +7,7 @@ import calc
 import help
 import iss
 import ping
+import horoscope
 
 commandModules = {'translate' : translate, 'wiki' : wiki, 'weather' : weather, 'btc' : btc, 'rand' : rand, 'calc': calc, 'help': help,
-		  'iss': iss, 'ping': ping}
+		  'iss': iss, 'ping': ping, 'horoscope': horoscope}

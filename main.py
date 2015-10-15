@@ -12,7 +12,6 @@ import modules.list as commandList
 
 from websocket import create_connection
 
-
 #########################################
 TOKEN = "" # YOUR SLACK API KEY GOES HERE
 TOKEN = os.environ['TOKEN'] # DELETE THIS
@@ -22,7 +21,10 @@ reload(sys)
 sys.setdefaultencoding('utf8')
 
 wikipedia.set_lang('en')
-data = urllib2.urlopen("https://slack.com/api/rtm.start?token=" + TOKEN)
+try:
+   data = urllib2.urlopen("https://slack.com/api/rtm.start?token=" + TOKEN)
+except urllib2.URLError as exception:
+   print 'Error: Name or service not known. Please check your internet conectivity.'
 result = data.read()
 
 jsonDecoded = json.loads(result)

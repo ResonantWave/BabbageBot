@@ -11,11 +11,13 @@ Install the following dependencies with pip.
 
 In case that you don't have pip, then do ``apt-get install update && apt-get install python-pip`` on Debian based systems.
 
-Required dependencies:
+Required python dependencies:
 
    - `websocket-client`
    - `pyjokes` (https://github.com/pyjokes/pyjokes)
    - `wikipedia`
+
+Also, `curl` is required for the `horoscope` module.
 
 An API token is required to run this bot. Check out https://api.slack.com/ for more information on how to create and obtain a token.
 Once you have this token, replace the TOKEN variable in `main.py`_ with your Slack bot token.

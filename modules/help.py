@@ -6,4 +6,4 @@ def execute(data):
       commandList = ''
       for key in list.commandModules.keys():
          commandList += key + ', '
-      return 'Available modules: ' + commandList[:-2] + '.' # the :-2 should remove the ', '
+      return 'Available modules: ' + commandList[:-2] + '. Available commands: joke (from pyjokes)'
