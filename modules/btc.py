@@ -18,7 +18,7 @@ def execute(data):
 	             string += '\nError: The specified quantity is not a number'
                return string
 	    except Exception as e:
-	       logging.error(str(e))
+	       return str(e)
 	 else:
 	    return 'Error: ' + a[1].upper() + ' is not a valid currency.'
       else:
