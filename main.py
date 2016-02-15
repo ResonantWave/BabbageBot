@@ -31,6 +31,9 @@ result = data.read()
 
 jsonDecoded = json.loads(result)
 
+if not jsonDecoded['ok']:
+   print("Error when communicating with Slack.\nReason: %s" % jsonDecoded['error'])
+   sys.exit(1)
 
 print(str(jsonDecoded['ok']) + ": " + jsonDecoded['self']['name'])
 
