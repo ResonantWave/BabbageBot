@@ -15,8 +15,8 @@ import modules.list as commandList
 from websocket import create_connection
 
 #########################################
-TOKEN = "" # YOUR SLACK API KEY GOES HERE
-TOKEN = os.environ['TOKEN'] # DELETE THIS
+TOKEN = "" # YOUR SLACK API KEY GOES HERE (or as TOKEN env variable)
+TOKEN = os.environ.get('TOKEN', TOKEN)
 #########################################
 
 reload(sys)

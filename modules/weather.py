@@ -5,7 +5,7 @@ import json
 import os
 
 token = "" # YOUR OPENWEATHERMAP ID GOES HERE
-token = os.environ['TOKENWEATHER'] # DELETE THIS
+token = os.environ.get('TOKENWEATHER', token)
 
 def execute(data):
    a = data.split()
