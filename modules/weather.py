@@ -16,16 +16,16 @@ def execute(data):
             html = response.read()
             decoded = json.loads(html)
             string = 'Temperature in ' + str(decoded['name']) + ', ' + str(decoded['sys']['country']) + ': ' + str(decoded['main']['temp']) + ' ºC'
-	    string += '\nHumidity: ' + str(decoded['main']['humidity']) + ' %\nWind speed: ' + str(decoded['wind']['speed']) + ' Km/h' + '\nAtmosferic pressure: ' + str(decoded['main']['pressure']) + ' mBar'
-	    if str(decoded['weather'][0]['main']) == 'Clear':
-	       string += ' ☀'
-	    elif str(decoded['weather'][0]['main']) == 'Clouds':
+            string += '\nHumidity: ' + str(decoded['main']['humidity']) + ' %\nWind speed: ' + str(decoded['wind']['speed']) + ' Km/h' + '\nAtmosferic pressure: ' + str(decoded['main']['pressure']) + ' mBar'
+            if str(decoded['weather'][0]['main']) == 'Clear':
+               string += ' ☀'
+            elif str(decoded['weather'][0]['main']) == 'Clouds':
                string += ' ☁☁'
-	    elif str(decoded['weather'][0]['main']) == 'Rain':
+            elif str(decoded['weather'][0]['main']) == 'Rain':
                string += ' ☔'
-	    elif str(decoded['weather'][0]['main']) == 'Thunderstorm':
+            elif str(decoded['weather'][0]['main']) == 'Thunderstorm':
                string += ' ☔☔☔☔'
-	    return string
+            return string
          except Exception as e:
             logging.error(str(e))
       else:

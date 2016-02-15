@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*- 
+from __future__ import print_function
+
 import sys
 import re
 import urllib2
@@ -24,12 +26,13 @@ wikipedia.set_lang('en')
 try:
    data = urllib2.urlopen("https://slack.com/api/rtm.start?token=" + TOKEN)
 except urllib2.URLError as exception:
-   print 'Error: Name or service not known. Please check your internet conectivity.'
+   print('Error: Name or service not known. Please check your internet conectivity.')
 result = data.read()
 
 jsonDecoded = json.loads(result)
 
-print str(jsonDecoded['ok']) + ": " + jsonDecoded['self']['name']
+
+print(str(jsonDecoded['ok']) + ": " + jsonDecoded['self']['name'])
 
 ws = create_connection(jsonDecoded['url'])
 
@@ -41,11 +44,11 @@ while True:
    try:
       if result['type'] == 'message':
          if result['text'].lower() == 'joke':
-	    send(result['channel'], pyjokes.get_joke())
+            send(result['channel'], pyjokes.get_joke())
 
-	 if result['text'].lower().split()[0] in commandList.commandModules:
-	    function = commandList.commandModules[result['text'].lower().split()[0]]
-	    send(result['channel'], function.execute(result['text']))
+         if result['text'].lower().split()[0] in commandList.commandModules:
+            function = commandList.commandModules[result['text'].lower().split()[0]]
+            send(result['channel'], function.execute(result['text']))
       time.sleep(1)
    except KeyError:
       pass
