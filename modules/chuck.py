@@ -7,8 +7,8 @@ def execute(data):
       try:
          response = urllib2.urlopen('http://api.icndb.com/jokes/random')
          html = response.read()
-	 decoded = json.loads(html)
+         decoded = json.loads(html)
 
-	 return decoded['value']['joke']
+         return decoded['value']['joke']
       except Exception as e:
          return (str(e))

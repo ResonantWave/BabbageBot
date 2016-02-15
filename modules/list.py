@@ -12,4 +12,4 @@ import chuck
 import eightball
 
 commandModules = {'translate' : translate, 'wiki' : wiki, 'weather' : weather, 'btc' : btc, 'rand' : rand, 'calc': calc, 'help': help,
-		  'iss': iss, 'ping': ping, 'horoscope': horoscope, 'chucknorris': chuck, '8ball': eightball}
+                  'iss': iss, 'ping': ping, 'horoscope': horoscope, 'chucknorris': chuck, '8ball': eightball}

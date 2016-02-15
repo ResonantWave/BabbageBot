@@ -7,11 +7,21 @@ Simple bot for Slack written in Python
 Installation
 ============
 
-Install the following dependencies with pip.
+Install the needed dependencies with pip.
 
 In case that you don't have pip, then do ``apt-get install update && apt-get install python-pip`` on Debian based systems.
 
-Required python dependencies:
+In order to install them, invoke pip as follows::
+
+  pip install -r requirements.txt
+
+If you do not want to install the dependencies globally, use a virtualenv (you will need python-virtualenv or a similar package; or install virtualenv via pip globally)::
+
+  virtualenv env
+  source env/bin/activate
+  pip install -r requirements.txt
+
+The needed Python dependencies at the moment are:
 
    - `websocket-client`
    - `pyjokes` (https://github.com/pyjokes/pyjokes)
@@ -20,7 +30,7 @@ Required python dependencies:
 Also, `curl` is required for the `horoscope` module.
 
 An API token is required to run this bot. Check out https://api.slack.com/ for more information on how to create and obtain a token.
-Once you have this token, replace the TOKEN variable in `main.py`_ with your Slack bot token.
+Once you have this token, replace the ``TOKEN`` variable in `main.py`_ with your Slack bot token, or run the application with a ``TOKEN`` environment variable.
 
 Also, please obtain an http://openweathermap.org/ API key if you want to use the ``weather`` command. Replace it in `modules/weather.py`_
 
@@ -43,6 +53,10 @@ Contributors
 Development:
 
 * `NiXijav`
+
+Small contributions:
+
+* `ssaavedra`
 
 Contributing
 ============

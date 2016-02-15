@@ -8,12 +8,12 @@ def execute(data):
          if a[1].isdigit():
             return str(randint(0, int(a[1])))
          else:
-	    return syntaxError
+            return syntaxError
       elif len(a) > 2:
          if a[1].isdigit() and a[2].isdigit():
-	    return str(randint(int(a[1]), int(a[2])))
+            return str(randint(int(a[1]), int(a[2])))
          else:
-	    return syntaxError
+            return syntaxError
       elif len(a) == 1:
          return str(randint(0, 65535))
       else:

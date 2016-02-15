@@ -12,6 +12,6 @@ def execute(text):
             page = urllib2.urlopen(request).read()
             translation = page[page.find(before_trans)+len(before_trans):]
             translation = translation.split("<")[0]     
-	    return translation.decode('utf-8')
+            return translation.decode('utf-8')
          else:
             return 'Argument error. Syntax: translate baseLang/auto targetLang string'
